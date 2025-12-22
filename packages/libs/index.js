@@ -2,11 +2,11 @@ const add = (a, b) => {
 	return a + b;
 };
 
-const mutilpy2 = (a) => {
-	return a * 2;
+const mutilpy3 = (a) => {
+	return a * 3;
 };
 
 module.exports = {
 	add,
-	mutilpy2,
+	mutilpy3,
 };
