@@ -1,16 +1,16 @@
 {
-  "name": "xfz-monorepo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {},
-  "devDependencies": {
-    "lerna": "^8.2.4"
-  }
+	"name": "xfz-monorepo",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"publish": "lerna publish"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {},
+	"devDependencies": {
+		"lerna": "^8.2.4"
+	}
 }
