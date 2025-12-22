@@ -10,6 +10,7 @@
 	"license": "ISC",
 	"description": "",
 	"dependencies": {},
+	"packageManager": "pnpm@10.23.0",
 	"devDependencies": {
 		"lerna": "^8.2.4"
 	}
