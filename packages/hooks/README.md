@@ -1,6 +1,6 @@
 ## 📚 Hooks API
 
-[查看 API 文档](./docs/index.html)
+[查看 API 文档](https://raw.githack.com/xfz1987/xfz-monorepo/master/packages/hooks/docs/index.html)
 
 ## 安装配置 microbundle
 

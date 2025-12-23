@@ -1,5 +1,25 @@
 import { useState, useEffect, useRef } from 'react';
 
+/**
+ * 节流Hook，限制回调函数在指定时间内只执行一次
+ *
+ * @param callback - 需要节流的回调函数
+ * @param limit - 限制时间间隔（毫秒）
+ *
+ * @example
+ * ```tsx
+ * function SearchComponent() {
+ *   const [inputValue, setInputValue] = useState("");
+ *
+ *   useThrottle(() => {
+ *     // 执行搜索API调用
+ *     console.log('Searching for:', inputValue);
+ *   }, 500);
+ *
+ *   return <input onChange={(e) => setInputValue(e.target.value)} />;
+ * }
+ * ```
+ */
 export const useThrottle = (callback: () => void, limit: number) => {
 	const [throttling, setThrottling] = useState(false);
 	const savedCallback = useRef<() => void>(null);

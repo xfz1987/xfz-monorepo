@@ -1,13 +1,28 @@
-/**
- * 允许组件检测特定DOM元素何时在视口中可见并跟踪可见性状态
- * rootMargin是一个可选字符串，用于定义根元素周围的偏移量。它可用于在检查交叉点之前放大或缩小根元素的边界框。默认值为“0px”
- */
 import { useEffect, useState, RefObject } from 'react';
 
 /**
- * ref是对 DOM 元素的引用以检测可见性
- * @param ref
- * @param rootMarin
+ * 检测DOM元素是否在视口中可见
+ *
+ * 使用IntersectionObserver API来跟踪元素的可见性状态。
+ * rootMargin参数用于定义根元素周围的偏移量，可以在检查交叉点之前放大或缩小根元素的边界框。
+ *
+ * @param ref - 对DOM元素的引用，用于检测可见性
+ * @param rootMargin - 根元素周围的偏移量，默认为"0px"
+ * @returns 返回一个布尔值，表示元素是否在视口中可见
+ *
+ * @example
+ * ```tsx
+ * function LazyLoadComponent() {
+ *   const elementRef = useRef(null);
+ *   const isVisible = useOnScreen(elementRef, '-100px');
+ *
+ *   return (
+ *     <div ref={elementRef}>
+ *       {isVisible ? '✓ Visible' : '✗ Not visible'}
+ *     </div>
+ *   );
+ * }
+ * ```
  */
 export function useOnScreen<S>(ref: RefObject<Element>, rootMargin = '0px'): boolean {
   const [visible, setVisible] = useState(false);

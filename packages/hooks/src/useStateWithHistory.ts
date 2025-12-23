@@ -2,9 +2,32 @@ import { useRef, useState, useCallback } from 'react';
 import { tuplify } from './uitls';
 
 /**
- * 跟踪组件状态的历史记录
- * @param defaultValue 状态的初始值
- * @param capacity 可选参数，用于设置应存储在历史记录中的最大状态数
+ * 带有历史记录的状态管理Hook，支持撤销/重做操作
+ *
+ * @param defaultValue - 状态的初始值
+ * @param options - 配置选项
+ * @param options.capacity - 历史记录的最大容量，默认10
+ * @returns 返回一个元组 [value, setValue, historyAPI]
+ *
+ * @example
+ * ```tsx
+ * function StateWithHistoryComponent() {
+ *   const [count, setCount, { history, pointer, back, forward, go }] =
+ *     useStateWithHistory(1);
+ *
+ *   return (
+ *     <div>
+ *       <div>Current: {count}</div>
+ *       <div>History: {history.join(", ")}</div>
+ *       <div>Pointer: {pointer}</div>
+ *       <button onClick={() => setCount(count * 2)}>Double</button>
+ *       <button onClick={() => setCount(count + 1)}>Increment</button>
+ *       <button onClick={back}>Undo</button>
+ *       <button onClick={forward}>Redo</button>
+ *     </div>
+ *   );
+ * }
+ * ```
  */
 export const useStateWithHistory = (defaultValue: number, { capacity = 10 } = {}) => {
   const [value, setValue] = useState(defaultValue);

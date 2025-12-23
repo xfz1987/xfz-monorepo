@@ -1,7 +1,27 @@
-/**
- * 用于管理、切换状态的钩子
- */
 import { useState } from 'react';
+
+/**
+ * 管理布尔状态的切换Hook
+ *
+ * @param initialState - 初始状态，默认false
+ * @returns 返回包含状态和控制函数的对象
+ *
+ * @example
+ * ```tsx
+ * function ToggleComponent() {
+ *   const { on, set, reset, toggle } = useToggle();
+ *
+ *   return (
+ *     <div>
+ *       <p>State: {on ? 'ON' : 'OFF'}</p>
+ *       <button onClick={() => set(true)}>Set to ON</button>
+ *       <button onClick={toggle}>Toggle</button>
+ *       <button onClick={reset}>Reset</button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ */
 export const useToggle = (initialState = false) => {
   const [toggle, setToggle] = useState(initialState);
 
