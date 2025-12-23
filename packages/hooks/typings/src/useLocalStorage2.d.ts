@@ -1,0 +1,2 @@
+export declare const useLocalStorage2: (name: string) => [() => number | string | Record<string, any> | null, (item: number | string | Record<string, any>) => void, () => void];
+//# sourceMappingURL=useLocalStorage2.d.ts.map

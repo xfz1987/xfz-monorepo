@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='欢迎/介绍' />
+
+# 欢迎使用 Xfz UI 组件库
+
+一个基于 **TypeScript + Tailwind CSS + Radix UI** 构建的现代化 React 组件库。
+
+## ✨ 特性
+
+- 🎨 **Tailwind CSS** - 实用优先的样式系统
+- 🧩 **Radix UI** - 无障碍的底层组件
+- 📘 **TypeScript** - 完整的类型支持
+- 🎯 **Monorepo** - 使用 pnpm workspace 管理
+- 📚 **Storybook** - 交互式组件文档
+
+## 📦 已有组件
+
+### Button (按钮)
+
+- 4 种变体：`primary`, `secondary`, `outline`, `ghost`
+- 3 种尺寸：`sm`, `md`, `lg`
+- 完整的可访问性支持
+
+### Input (输入框)
+
+- 3 种样式：`default`, `filled`, `outlined`
+- 3 种尺寸：`sm`, `md`, `lg`
+- 支持错误提示和辅助文本
+- 基于 Radix UI Label
+
+## 🚀 快速开始
+
+```tsx
+import { Button, Input } from '@xfz/ui';
+
+function App() {
+	return (
+		<div>
+			<Button variant='primary' size='md'>
+				点击我
+			</Button>
+
+			<Input
+				label='用户名'
+				placeholder='请输入用户名'
+				helperText='用于登录系统'
+			/>
+		</div>
+	);
+}
+```
+
+## 📖 使用指南
+
+1. 在左侧导航栏选择组件
+2. 查看组件的不同变体和状态
+3. 在 **Controls** 面板中调整属性
+4. 复制示例代码到你的项目
+
+## 🎯 设计原则
+
+- **简洁优雅** - 简洁的 API 设计
+- **灵活可定制** - 易于扩展和定制
+- **无障碍优先** - 遵循 WCAG 标准
+- **性能优化** - 轻量级，按需加载
+
+## 🛠️ 技术栈
+
+- React 18
+- TypeScript 5
+- Tailwind CSS 3
+- Radix UI
+- Storybook 8
+- tsup (构建工具)
+
+---
+
+**开始探索组件 →** 点击左侧导航栏查看所有可用组件

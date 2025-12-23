@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
+		"storybook": "pnpm --filter @xfz/ui-interface dev",
 		"publish": "lerna publish"
 	},
 	"keywords": [],

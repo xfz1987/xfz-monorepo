@@ -1,15 +1,43 @@
 {
 	"name": "@xfz/hooks",
 	"version": "1.0.1",
-	"main": "index.js",
+	"description": "Company hooks Library with TypeScript",
+	"main": "./dist/index.js",
+	"source": "index.ts",
+	"unpkg": "./dist/index.umd.js",
+	"types": "./dist/typings/index.d.ts",
+	"module": "./dist/index.module.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "microbundle watch --jsx preserve",
+		"build": "microbundle --jsx preserve",
+		"api:init": "api-extractor init",
+		"api:run": "api-extractor run --local --verbose",
+		"api:doc": "typedoc --out docs index.ts"
 	},
-	"keywords": [],
+	"keywords": [
+		"hooks",
+		"react",
+		"tool",
+		"typeScript",
+		"microbundle"
+	],
 	"author": "",
 	"license": "ISC",
-	"description": "",
+	"peerDependencies": {
+		"react": "^18.0.0 || ^19.0.0",
+		"react-dom": "^18.0.0 || ^19.0.0"
+	},
 	"dependencies": {
-		"@xfz/libs": "workspace:*"
+		"@xfz/libs": "workspace:*",
+		"immer": "^11.1.0"
+	},
+	"devDependencies": {
+		"@microsoft/api-extractor": "^7.55.2",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"microbundle": "^0.15.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"typedoc": "^0.28.15"
 	}
 }

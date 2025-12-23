@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "esnext", // 指定 ECMAScript 版本
+		"module": "esnext",
+		"jsx": "preserve",
+		"lib": ["esnext", "DOM", "DOM.Iterable"],
+		"strict": true,
+		"declaration": true, // 开启ts分析
+		"declarationMap": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"skipLibCheck": true, // 建议加上，跳过 node_modules 的类型检查，加快速度并减少无关报错
+		"esModuleInterop": true, // 建议加上，提高对 CJS 模块的兼容性
+		"declarationDir": "./typings" // 将ts类型生成到该文件夹下
+	},
+	"include": ["index.ts", "src"],
+	"exclude": ["node_modules", "examples", "dist", "**/*.spec.ts"] // *** 不进行类型检查的文件 ***
+}
